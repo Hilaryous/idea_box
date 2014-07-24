@@ -1,0 +1,25 @@
+<h3 class = "existing">Edit Idea</h3>
+<ul>
+  <form action="/<%= idea.id %>" method="POST">
+    <p>
+      <% if idea.id %>
+        Edit your Idea:
+      <% else %>
+        Your Idea:
+      <% end %>
+    </p>
+    <% if idea.id %>
+      <input type="hidden" name="_method" value="PUT" />
+    <% end %>
+    <div id = "form">
+      Tag(s)
+      <input type='text' name='idea[tags]' value="<%= idea.tags.join(", ") %>"/><br/>
+      Title
+      <input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
+    <div id= "textbox">
+      Description
+      <textarea name='idea[description]'><%= idea.description %></textarea><br/>
+    </div>
+    <input type='submit'/>
+  </form>
+</ul>

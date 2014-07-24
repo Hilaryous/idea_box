@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>IdeaBox</title>
+    <style type"text/css">
+      body{
+        width: 100%;
+        margin: 0 auto;
+        font-size: 175%;
+        font-family: "Courier New", Courier, monospace;
+        letter-spaceing: 0.15em;
+        background-color: #efefef;}
+      #page {
+        max-width: 1400px;
+        min-width: 720px;
+        margin: 0px auto 0px auto
+        padding: 0px;
+        border: 4px double #000;
+        background-color: #ffffff;
+        text-align: center}
+      #header{
+        width: 250px;
+        margin: 5px auto 5px auto;
+        text-align: center
+        color: #00910F;}
+      #logo{
+        width: 225px;
+        margin: 10px auto 10px auto;}
+      h3{
+        width: 290px;
+        margin: 10px auto 10px auto;
+        text-align: center;
+        color: #E71800;}
+      h3.new{
+        width: 175px;}
+      h3.existing{
+        width: 290px;}
+      ul{
+        width: 570px;
+        padding: 15px;
+        border-top: 5px solid #000;
+        margin: 0px auto 300px auto;
+        text-align: center;}
+      ul.list{
+        margin: 0px auto 70px auto;
+        font-size: 90%;
+        text-align: left;}
+      #form{
+        float: center;
+        width: 450px;
+        text-align: right;
+        padding-right: 10px;}
+      #textbox{
+        float: center
+        width: 300px;
+        padding-left: 40px;}
+      #homenav{
+        display: inline;
+        margin: 0px 3px;}
+      #listlink{
+        color: #C4E4FF;
+        font-weight: bold;
+        text_transform: uppercase;
+        text-decoration: none;
+        padding: 0px 0px 0px 0px;
+      }
+      a{
+        color: #C4E4FF;
+        font-weight: bold;
+        text_transform: uppercase;
+        text-decoration: none;
+        padding: 6px 18px 5px 25px;}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id= "logo">
+        <h1 id= "header">Ideabox</h1>
+        <img src= "http://makingartfun.com/images/watercolor-box-sketch.jpg" alt="A sketch of a box" title= "box" />
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
