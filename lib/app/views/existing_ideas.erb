@@ -1,29 +1,31 @@
-<h3 class = "existing">Existing Ideas</h3>
-<ul class="list">
-  <%ideas.each do |idea|%>
-  <li>
-    <div id="title">
-      Title: <%= idea.title %>
-      <form action= '/<%= idea.id %>/like' method= 'POST' style= "display: inline">
-        <input type= 'submit' value="+"/>
+<body class="">  
+  <h3 class = "existing">Existing Ideas</h3>
+  <ul class="list">
+    <%ideas.each do |idea|%>
+    <li>
+      <div id="title">
+        Title: <%= idea.title %>
+        <form action= '/<%= idea.id %>/like' method= 'POST' style= "display: inline">
+          <input type= 'submit' value="+"/>
+        </form>
+      </div>
+      <div id= "description">
+      Description: <%= idea.description %>
+      </div>
+      <div id= "tags">
+      Tags:<% idea.tags.each do |tag|%>
+          <a id = "listlink" href="/<%= tag%>"><%=tag%></a>
+        <% end %><br/>
+      </div>
+      <div id= "edit">
+        <a id = "listlink" href="/<%= idea.id %>/edit">Edit</a>
+      </div>
+      <form action="/<%= idea.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
       </form>
-    </div>
-    <div id= "description">
-    Description: <%= idea.description %>
-    </div>
-    <div id= "tags">
-    Tags:<% idea.tags.each do |tag|%>
-        <a id = "listlink" href="/<%= tag%>"><%=tag%></a>
-      <% end %><br/>
-    </div>
-    <div id= "edit">
-      <a id = "listlink" href="/<%= idea.id %>/edit">Edit</a>
-    </div>
-    <form action="/<%= idea.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="delete"/>
-    </form>
-  </li>
-  <%end%>
-</ul>
-<a id = "homenav" href="/">Home</a>
+    </li>
+    <%end%>
+  </ul>
+  <a id = "homenav" href="/">Home</a>
+</body>
