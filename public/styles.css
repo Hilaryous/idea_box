@@ -3,9 +3,9 @@ body{
   margin: 0% auto;
   font-size: 175%;
   font-family: "Courier New", Courier, monospace;
-  letter-spaceing: 0.15em;
   background-color: #efefef;}
 #page {
+  height: 100%;
   max-width: 100%;
   min-width: 10%;
   margin: 0% auto 0% auto;
