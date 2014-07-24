@@ -13,7 +13,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   def format_data(data)
-    formatted_data = {"title"=> data["title"], "description"=> data["description"], "tags"=> data["tags"].split(", ")}
+    {"title"=> data["title"], "description"=> data["description"], "tags"=> data["tags"].split(", ")}
   end
 
   get '/' do
@@ -21,7 +21,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/' do
-    idea = IdeaStore.create(format_data(params[:data]))
+    idea = IdeaStore.create(format_data(params[:idea]))
     redirect '/'
   end
 

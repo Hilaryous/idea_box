@@ -1,24 +1,14 @@
 ---
 ideas:
-- title: idea 3
-  description: this is a test
-  rank: 18
-  tags:
-  - tag1
-  - tag2
-  - i am tag3
-- title: idea 4
-  description: this is a test
-  rank: 19
-  tags:
-  - tagone
-  - tag2
-  - tag3
-- title: Yummy
-  description: Vanilla
-  tags:
-  - ice cream
 - title: Danes
   description: danes are big and sweet and awesome!
   tags:
   - dogs
+- title: siamese
+  description: I am a kitty
+  tags:
+  - cat
+- title: black
+  description: Bad luck
+  tags:
+  - cat
