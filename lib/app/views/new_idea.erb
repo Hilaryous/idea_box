@@ -18,3 +18,22 @@
   </form>
 </ul>
 <a id = "homenav" href="/">Home</a>
+
+%h3.new New Idea
+%ul
+  %form{action: "/", method: "POST"}
+  %p
+    Your Idea:
+  #form
+    Tag(s)
+    %input{name: "idea[tags]", type: "text"}/
+    %br/
+    Title
+    %input{name: "idea[title]", type: "text"}/
+    %br/
+  #textbox
+    Description
+    %textarea{name: "idea[description]"}
+    %br/
+  %input{type: "submit"}/
+%a#homenav{href: "/"} Home

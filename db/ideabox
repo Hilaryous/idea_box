@@ -1,14 +1,7 @@
 ---
 ideas:
 - title: Danes
-  description: danes are big and sweet and awesome!
+  description: danes are big and sweet and awesome! YAY
+  rank: 8
   tags:
   - dogs
-- title: siamese
-  description: I am a kitty
-  tags:
-  - cat
-- title: black
-  description: Bad luck
-  tags:
-  - cat

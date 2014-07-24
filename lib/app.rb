@@ -10,7 +10,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   not_found do
-    erb :error
+    haml :error
   end
 
   def format_data(data)
@@ -18,7 +18,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    haml :index
   end
 
   post '/' do
@@ -32,21 +32,21 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/new_idea' do
-    erb :new_idea, locals: {idea: Idea.new(params)}
+    haml :new_idea, locals: {idea: Idea.new(params)}
   end
 
   get '/existing_ideas' do
-    erb :existing_ideas, locals: {ideas: IdeaStore.all.sort}
+    haml :existing_ideas, locals: {ideas: IdeaStore.all.sort}
   end
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :edit, locals: {idea: idea}
+    haml :edit, locals: {idea: idea}
   end
 
   get '/:tag' do |tag|
     ideas = IdeaStore.find_by_tag(tag)
-    erb :results, locals: {tag: tag, ideas: ideas}
+    haml :results, locals: {tag: tag, ideas: ideas}
   end
 
   put '/:id' do |id|
@@ -56,9 +56,10 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/:id/like' do |id|
-    idea =  IdeaStore.find(id.to_i)
-    idea.like!
-    IdeaStore.update(id.to_i, idea.to_h)
+    # idea =  IdeaStore.find(id.to_i)
+    # idea.like!
+    # IdeaStore.update(id.to_i, idea.to_h)
+    IdeaStore.like(id.to_i)
     redirect '/existing_ideas'
   end
 end

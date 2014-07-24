@@ -11,10 +11,6 @@ class Idea
     @tags        = attributes["tags"]
   end
 
-  # def has_tag?(tag)
-  #   tags.include?(tag)
-  # end
-
   def to_h
     {
       "title"       => title,
@@ -28,7 +24,7 @@ class Idea
     IdeaStore.create(to_h)
   end
 
-  def like!
+  def like
     @rank += 1
   end
 

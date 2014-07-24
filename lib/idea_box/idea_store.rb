@@ -65,9 +65,10 @@ class IdeaStore
       database['ideas'][id] = data
     end
   end
-end
 
-# idea = {"tags"=> ["tag1", "tag2", "tag 4"], "title"=>"idea 5", "description"=>"this is a test"}
-# tag = "i am tag 3"
-#
-# IdeaStore.find(1)
+  def self.like(id)
+    idea = find(id)
+    idea.like
+    update(id, idea.to_h)
+  end
+end
